@@ -5,7 +5,7 @@
   });
 
   onMounted(() => {
-    console.log('layout mounted')
+    console.log('layout mounted', import.meta.env)
   })
 </script>
 
