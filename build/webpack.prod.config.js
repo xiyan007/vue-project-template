@@ -2,13 +2,14 @@ const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
 const resolve = (dir) => path.resolve(process.cwd(), dir);
 
 module.exports = {
   mode: 'production',
   entry: {
-    // common: ['react', 'react-dom', 'redux', 'react-redux'],
+    common: ['vue'],
     app: ['./src/index.js'],
   },
   output: {
@@ -20,19 +21,28 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      '@': resolve('src'),
-      '@components': resolve('src/components'),
-      '@pages': resolve('src/pages'),
+      '@': resolve('./src'),
+      '@components': resolve('./src/components'),
+      '@pages': resolve('./src/pages'),
     },
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
+          },
+        ],
+      },
+      {
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'vue-loader',
           },
         ],
       },
@@ -48,10 +58,6 @@ module.exports = {
           'postcss-loader',
           {
             loader: 'less-loader',
-            options: {
-              javascriptEnabled: true,
-              modifyVars: { '@primary-color': '#0073c9' },
-            },
           },
         ],
       },
@@ -86,7 +92,7 @@ module.exports = {
       template: resolve('build/index.template.html'),
     }),
     // ProvidePlugin 可以自动加载模块，不需要手动使用 import /require 引入模块
-    new Webpack.ProvidePlugin({
-    }),
+    new Webpack.ProvidePlugin({}),
+    new VueLoaderPlugin(),
   ],
 };
