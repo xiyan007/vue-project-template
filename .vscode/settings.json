@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  // "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.wordWrap": "on",
+  "files.autoSave": "onFocusChange",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+  // "[html]": {
+  //   "editor.defaultFormatter": "vscode.html-language-features"
+  // }
+}

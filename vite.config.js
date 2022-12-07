@@ -19,6 +19,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         '@pages': resolve('./src/pages'),
       },
     },
+    // plugins: [vue(), viteSingleFile()],
     plugins: [vue()],
   };
 

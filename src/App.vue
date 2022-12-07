@@ -1,15 +1,9 @@
 <script setup>
-import Layout from '@components/Layout.vue'
-import Home from '@pages/Home.vue'
-import About from './pages/About.vue'
+  import './global.less';
 </script>
 
 <template>
-  <Layout msg="App">
-    <Home />
-  </Layout>
+  <router-view></router-view>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

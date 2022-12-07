@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import router from './router';
+import App from './App.vue';
 
-const app = createApp(App).mount('#app')
+console.log('import.meta.env', import.meta.env);
+
+const app = createApp(App);
+
+app.use(router);
+app.mount('#app');
