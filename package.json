@@ -26,7 +26,8 @@
   "homepage": "https://github.com/xiyan007/vue-project-template#readme",
   "dependencies": {
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
